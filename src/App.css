@@ -16,6 +16,8 @@
   
   width: 50%;
   align-content: left;
+  color:white;
+  margin-left: 2rem;
 }
 
 .navbar-links{
@@ -26,3 +28,15 @@
   flex-direction: row;
   justify-content: right;
 }
+
+.navbar-link{
+  margin: 0.5rem;
+  padding: 0.5rem;
+  color: white;
+}
+
+.navbar-link:hover{
+  background-color:white;
+  color: purple;
+}
+

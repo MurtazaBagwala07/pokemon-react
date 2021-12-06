@@ -10,10 +10,10 @@ const Navbar = () => {
                 <h1>Pokemon App</h1>
                 </div>
                 <ul className="navbar-links">
-                <Link to='/'>Home</Link>
-                <Link to='/pokedex'>Pokedex</Link>
-                <Link to='/fight'>Fight</Link>
-                <Link to='/favourites'>Favourites</Link>
+                <Link className="navbar-link" to='/'>Home</Link>
+                <Link className="navbar-link" to='/pokedex'>Pokedex</Link>
+                <Link className="navbar-link" to='/fight'>Fight</Link>
+                <Link className="navbar-link" to='/favourites'>Favourites</Link>
                 </ul>
             </nav>
         </React.Fragment>
