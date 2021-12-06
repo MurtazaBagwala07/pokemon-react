@@ -40,3 +40,44 @@
   color: purple;
 }
 
+.card-container{
+  border: 2px solid black;
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+}
+
+.card-image img{
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
+}
+
+.card-title{
+  text-transform: uppercase;
+  border: 1px solid black;
+  
+}
+
+.card-types{
+  display: flex;
+  flex-direction: row;
+}
+
+.card-type{
+  border: 1px solid black;
+  padding:0.2rem;
+  margin: 0.3rem;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+  border: 1px solid black;
+}
+
