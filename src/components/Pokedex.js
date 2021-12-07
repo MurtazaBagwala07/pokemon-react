@@ -1,10 +1,11 @@
 import React,{useState} from 'react'
 import Card from '../UI/Card'
 
+
 const Pokedex = () => {
     
     const [pokemonName,setPokemonName] = useState('bulbasaur')
-    const [pokemon,setPokemon] = useState({})
+    const [pokemon,setPokemon] = useState(null)
     const submitHandler = (e) => {
         e.preventDefault();
         const dataFetch= async()=>{
@@ -25,7 +26,7 @@ const Pokedex = () => {
                 height : data.height,
                 img : data.sprites.other.dream_world.front_default,
             })
-            console.log(pokemon.types)
+            
         }
         dataFetch();
         
@@ -39,16 +40,17 @@ const Pokedex = () => {
         <div className="pokedex-wrapper">
             <div className="pokedex-index">
             <form onSubmit={submitHandler}>
-                <input 
+                <input
+                className="pokedex-input" 
                 type="text" 
                 value={pokemonName}
                 onChange={(e)=>{setPokemonName(e.target.value)}}
                 />
-                <button>Search</button>
+                <button className="pokedex-btn">Search</button>
             </form>
             </div>
             <div className="pokedex-result">
-                <Card pokemon={pokemon}/>
+                {pokemon && <Card pokemon={pokemon}/>}
             </div>
         </div>
     )

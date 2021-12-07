@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import typeColors from '../helpers/typeColors' ;
 
 const Card = (props) => {
     return (
@@ -12,7 +13,7 @@ const Card = (props) => {
             <div className="card-types">
                 {props.pokemon.types.map(type=>{
                     return (
-                        <span className="card-type" key={type}>
+                        <span className="card-type" style={{backgroundColor:typeColors[type.type.name]}} key={type}>
                             {type.type.name}
                         </span>
                     )
