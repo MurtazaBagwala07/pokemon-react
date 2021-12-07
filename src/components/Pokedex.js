@@ -4,11 +4,13 @@ import Card from '../UI/Card'
 
 const Pokedex = () => {
     
-    const [pokemonName,setPokemonName] = useState('bulbasaur')
+    const [pokemonName,setPokemonName] = useState('')
+    const [isLoading,setIsLoading] = useState(false)
     const [pokemon,setPokemon] = useState(null)
     const submitHandler = (e) => {
         e.preventDefault();
         const dataFetch= async()=>{
+            setIsLoading(true);
             const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
             const data = await response.json()
             console.log(data)
@@ -26,13 +28,12 @@ const Pokedex = () => {
                 height : data.height,
                 img : data.sprites.other.dream_world.front_default,
             })
-            
+            setIsLoading(false)   
         }
         dataFetch();
         
     }
 
-    
 
     
 
@@ -50,7 +51,8 @@ const Pokedex = () => {
             </form>
             </div>
             <div className="pokedex-result">
-                {pokemon && <Card pokemon={pokemon}/>}
+                {isLoading && <h1>Loading...</h1>}
+                {!isLoading && pokemon && <Card pokemon={pokemon}/>}
             </div>
         </div>
     )
