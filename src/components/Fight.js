@@ -22,6 +22,7 @@ const Fight = () => {
                 </div>
             </div>
             <div className="abbreviations">
+                <p>Abbreviations</p>
                 <p>SE : Super Effective</p>
                 <p>Reg : Regular</p>
                 <p>NVE : Not Very Effective</p>
