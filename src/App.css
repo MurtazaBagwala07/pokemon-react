@@ -1,3 +1,5 @@
+@import url('http://fonts.cdnfonts.com/css/pokemon-solid');
+
 *{
   margin: 0;
   padding: 0;
@@ -39,6 +41,18 @@
 .navbar-link:hover{
   background-color:white;
   color: purple;
+}
+
+.home-wrapper{
+  display: flex;
+  flex-direction: column;
+}
+
+.pokemon-header-logo{
+  font-family: 'Pokemon Solid', sans-serif;
+  text-align: center;
+  font-size: 40px;
+  color:purple;                                              
 }
 
 .first-section{
@@ -162,3 +176,74 @@
  
 }
 
+.fight-wrapper{
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.elements{
+  display: flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items: center;
+}
+
+.elements-heading{
+   font-family: 'Pokemon Solid', sans-serif;
+   font-weight: 500;
+   font-size: 40px;
+   color:purple;
+   margin: 0.5rem;
+   padding: 0.5rem;
+}
+
+.elements-logo img{
+  width:40rem
+}
+
+.elements-logo{
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.fight-elements{
+  display: flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items: center;
+}
+
+.fight-elements-heading{
+   font-family: 'Pokemon Solid', sans-serif;
+   font-weight: 500;
+   font-size: 40px;
+   color:purple;
+   margin: 0.5rem;
+   padding: 0.5rem;
+}
+
+.fight-elements-logo{
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.fight-elements-logo img{
+  width:60rem;
+}
+
+.abbreviations{
+  display: flex;
+  flex-direction:column;
+  border: 5px solid purple;
+}
+
+.abbreviations p{
+  font-size: 30px;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  font-family: 'Pokemon Solid', sans-serif;
+  color:purple;
+}
