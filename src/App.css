@@ -41,6 +41,26 @@
   color: purple;
 }
 
+.first-section{
+  display: flex;
+  flex-direction: row;
+}
+
+.first-section div{
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border: 2px solid purple;
+}
+
+.first-section-text{
+  color:purple;
+}
+
+.first-section-img img{
+  width:250px;
+  height:300px;
+}
+
 .pokedex-wrapper{
   align-content: center;
   display: block;

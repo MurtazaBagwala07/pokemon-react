@@ -11,7 +11,7 @@ const Pokedex = () => {
         e.preventDefault();
         const dataFetch= async()=>{
             setIsLoading(true);
-            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
+            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName.toLowerCase()}`)
             const data = await response.json()
             console.log(data)
     
