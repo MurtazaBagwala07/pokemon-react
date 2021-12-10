@@ -1,5 +1,6 @@
 import React from 'react';
 import typeColors from '../helpers/typeColors' ;
+import Bookmark from '../components/Bookmark';
 
 const Card = (props) => {
     return (
@@ -8,12 +9,12 @@ const Card = (props) => {
                 <img src={props.pokemon.img} alt="" />
             </div>
             <div className="card-title">
-                {props.pokemon.name}
+               {props.pokemon.id}. {props.pokemon.name}
             </div>
             <div className="card-types">
                 {props.pokemon.types.map(type=>{
                     return (
-                        <span className="card-type" style={{backgroundColor:typeColors[type.type.name]}} key={type}>
+                        <span className="card-type" style={{backgroundColor:typeColors[type.type.name]}} key={type+props.pokemon.id}>
                             {type.type.name}
                         </span>
                     )
@@ -39,7 +40,8 @@ const Card = (props) => {
                     weight: {props.pokemon.weight}
                 </span>
             </div>
-           
+            
+           <Bookmark bookmarked={props.pokemon.bookmark}/>
             
         </div>
     )

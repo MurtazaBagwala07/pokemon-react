@@ -27,6 +27,8 @@ const Pokedex = () => {
                 types:data.types,
                 height : data.height,
                 img : data.sprites.other.dream_world.front_default,
+                id:data.id,
+                bookmark: true,
             })
             setIsLoading(false)   
         }
