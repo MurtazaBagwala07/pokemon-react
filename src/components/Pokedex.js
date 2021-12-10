@@ -1,12 +1,21 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import Card from '../UI/Card'
 
 
 const Pokedex = () => {
-    
+
+    const [isBookmarked,setIsBookmarked] =useState(false)
     const [pokemonName,setPokemonName] = useState('')
     const [isLoading,setIsLoading] = useState(false)
     const [pokemon,setPokemon] = useState(null)
+    const toggleBookmarked =(prevIsBookmarked)=>{
+        setIsBookmarked(prevIsBookmarked=>!isBookmarked)
+    }
+
+    useEffect(()=>{
+         
+    },[toggleBookmarked])    
+
     const submitHandler = (e) => {
         e.preventDefault();
         const dataFetch= async()=>{
@@ -28,7 +37,7 @@ const Pokedex = () => {
                 height : data.height,
                 img : data.sprites.other.dream_world.front_default,
                 id:data.id,
-                bookmark: true,
+                bookmark : isBookmarked
             })
             setIsLoading(false)   
         }
@@ -54,7 +63,7 @@ const Pokedex = () => {
             </div>
             <div className="pokedex-result">
                 {isLoading && <h1>Loading...</h1>}
-                {!isLoading && pokemon && <Card pokemon={pokemon}/>}
+                {!isLoading && pokemon && <Card pokemon={pokemon} toggleBookmarked={toggleBookmarked}/>}
             </div>
         </div>
     )

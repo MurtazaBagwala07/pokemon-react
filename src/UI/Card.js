@@ -3,6 +3,8 @@ import typeColors from '../helpers/typeColors' ;
 import Bookmark from '../components/Bookmark';
 
 const Card = (props) => {
+
+
     return (
         <div className="card-container">
             <div className="card-image">
@@ -40,8 +42,7 @@ const Card = (props) => {
                     weight: {props.pokemon.weight}
                 </span>
             </div>
-            
-           <Bookmark bookmarked={props.pokemon.bookmark}/>
+            <Bookmark pokemon={props.pokemon}/>
             
         </div>
     )

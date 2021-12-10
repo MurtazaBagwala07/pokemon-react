@@ -6,9 +6,11 @@ import Fight from './components/Fight';
 import Pokedex from './components/Pokedex';
 import Home from './components/Home';
 import ErrorPage from './components/ErrorPage';
+import {GlobalProvider} from './context/GlobalState'
 
 function App() {
   return (
+    <GlobalProvider>
     <Router>
       <Navbar/>
       <Routes>
@@ -19,6 +21,7 @@ function App() {
         <Route path="*" element={<ErrorPage/>}/>
       </Routes>
     </Router>
+    </GlobalProvider>
   );
 }
 
