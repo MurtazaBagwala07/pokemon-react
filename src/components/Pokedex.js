@@ -4,17 +4,18 @@ import Card from '../UI/Card'
 
 const Pokedex = () => {
 
-    const [isBookmarked,setIsBookmarked] =useState(false)
     const [pokemonName,setPokemonName] = useState('')
     const [isLoading,setIsLoading] = useState(false)
     const [pokemon,setPokemon] = useState(null)
-    const toggleBookmarked =(prevIsBookmarked)=>{
-        setIsBookmarked(prevIsBookmarked=>!isBookmarked)
-    }
+    const [isBookmarked,setIsBookmarked] = useState(false)
 
-    useEffect(()=>{
-         
-    },[toggleBookmarked])    
+    function toggleBookmarked(prevIsBookmarked) {
+        
+        setIsBookmarked(prevIsBookmarked=>!prevIsBookmarked)
+        console.log(isBookmarked)
+    }
+    
+    
 
     const submitHandler = (e) => {
         e.preventDefault();
@@ -37,7 +38,7 @@ const Pokedex = () => {
                 height : data.height,
                 img : data.sprites.other.dream_world.front_default,
                 id:data.id,
-                bookmark : isBookmarked
+                bookmark : {isBookmarked}
             })
             setIsLoading(false)   
         }
@@ -63,7 +64,7 @@ const Pokedex = () => {
             </div>
             <div className="pokedex-result">
                 {isLoading && <h1>Loading...</h1>}
-                {!isLoading && pokemon && <Card pokemon={pokemon} toggleBookmarked={toggleBookmarked}/>}
+                {!isLoading && pokemon && <Card pokemon={pokemon} bookmark={pokemon.bookmark} toggleBookmarked={toggleBookmarked}/>}
             </div>
         </div>
     )

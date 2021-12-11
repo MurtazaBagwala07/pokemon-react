@@ -42,7 +42,7 @@ const Card = (props) => {
                     weight: {props.pokemon.weight}
                 </span>
             </div>
-            <Bookmark pokemon={props.pokemon}/>
+            <Bookmark pokemon={props.pokemon} bookmark={props.bookmark} toggleBookmarked={props.toggleBookmarked}/>
             
         </div>
     )

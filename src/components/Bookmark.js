@@ -8,8 +8,8 @@ const Bookmark = (props) => {
     }=useContext(GlobalContext)
     return (
         <div >
-            {<i onClick={()=>addPokemonToFav(props.pokemon)} class="far fa-bookmark"></i>}
-            {<i onClick={()=>removePokemonFromFav(props.pokemon.id)} class="fas fa-bookmark"></i>}
+            {<i  onClick={()=>{addPokemonToFav(props.pokemon); alert("added")}} class="far fa-bookmark" ></i>}
+            {<i  onClick={()=>{removePokemonFromFav(props.pokemon.id); alert("removed")}} class="fas fa-ban"></i>}
         </div>
     )
 }
